@@ -30,3 +30,11 @@ async function getJson() {
 function shuffleArray(array) {
   return array.sort(() => 0.5 - Math.random());
 }
+
+//je créer une function pour récupèrer les propositions
+function  propositions(){
+
+  
+//j'affiche les propositions dans le label_response
+document.getElementsByClassName("label_response").innerHTML = (data[[0],[1],[2],[3].propositions]);
+}

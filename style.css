@@ -35,8 +35,7 @@ h1 {
 /********************************DIV QUESTION****************/
 .content {
   background-color: burlywood;
-  height: 10em;
-  padding: 3em 3em;
+  padding: 2em 0;
   margin: 2em;
   border-radius: 10px;
   border: 1px solid #000;
