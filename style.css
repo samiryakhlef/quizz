@@ -16,7 +16,7 @@ h1 {
   color: #fff;
 }
 .good {
-  background-color: green;
+  background-color: #fff;
   border: 1px solid #000;
   border-radius: 10px;
   width: 25%;
@@ -24,7 +24,7 @@ h1 {
   cursor: pointer;
 }
 .bad {
-  background-color: red;
+  background-color:#fff;
   border: 1px solid #000;
   border-radius: 10px;
   width: 25%;

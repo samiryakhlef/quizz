@@ -1,6 +1,4 @@
-
-
-start()
+start();
 // Il faut la définir en “async” (asynchrone)
 // car elle utilise fetch() (et “await” pour attendre une réponse)
 async function start() {
@@ -10,18 +8,30 @@ async function start() {
   shuffleArray(data);
 
   // Affiche les question dans la div id "question1","question2","question3","question4"
-  document.getElementById("question1").innerHTML = (data[0].question);
-  document.getElementById("label_response1").innerHTML = (data[0].propositions[0]);
-  document.getElementById("label_response2").innerHTML = (data[0].propositions[1]);
-  document.getElementById("label_response3").innerHTML = (data[0].propositions[2]);
-  document.getElementById("label_response4").innerHTML = (data[0].propositions[3]);
-  document.getElementById("question2").innerHTML = (data[1].question);
-  document.getElementById("label_response1").innerHTML = (data[1].propositions[0]);
-  document.getElementById("label_response2").innerHTML = (data[1].propositions[1]);
-  document.getElementById("label_response3").innerHTML = (data[1].propositions[2]);
-  document.getElementById("label_response4").innerHTML = (data[1].propositions[3]);
-  document.getElementById("question3").innerHTML = (data[2].question);
-  document.getElementById("question4").innerHTML = (data[3].question);
+  document.getElementById("question1").innerHTML = data[0].question;
+  document.getElementById("label_response1").innerHTML =
+    data[0].propositions[0];
+  document.getElementById("label_response2").innerHTML =
+    data[0].propositions[1];
+  document.getElementById("label_response3").innerHTML =
+    data[0].propositions[2];
+  document.getElementById("label_response4").innerHTML =
+    data[0].propositions[3];
+  document.getElementById("question2").innerHTML = data[1].question;
+  document.getElementById("label_reponse1").innerHTML = data[1].propositions[0];
+  document.getElementById("label_reponse2").innerHTML = data[1].propositions[1];
+  document.getElementById("label_reponse3").innerHTML = data[1].propositions[2];
+  document.getElementById("label_reponse4").innerHTML = data[1].propositions[3];
+  document.getElementById("question3").innerHTML = data[2].question;
+  document.getElementById("label_rponse1").innerHTML = data[2].propositions[0];
+  document.getElementById("label_rponse2").innerHTML = data[2].propositions[1];
+  document.getElementById("label_rponse3").innerHTML = data[2].propositions[2];
+  document.getElementById("label_rponse4").innerHTML = data[2].propositions[3];
+  document.getElementById("question4").innerHTML = data[3].question;
+  document.getElementById("label_ponse2").innerHTML = data[3].propositions[1];
+  document.getElementById("label_ponse1").innerHTML = data[3].propositions[0];
+  document.getElementById("label_ponse3").innerHTML = data[3].propositions[2];
+  document.getElementById("label_ponse4").innerHTML = data[3].propositions[3];
 }
 
 // Fonction de RÉCUPÉRATION DU FICHIER JSON contenant le quiz
@@ -39,11 +49,21 @@ function shuffleArray(array) {
   return array.sort(() => 0.5 - Math.random());
 }
 
-//Créer une function pour récupèrer les propositions et les afficher dans les label_response
-function  reponse(){
-const json = data.json(); 
-const objet = JSON.parse(json).proposistion;
-  
-//Afficher les propositions dans le label class="label_response"
+// évènement au click du bouton valider
 
-}
+document.querySelector('#form').addEventListener('submit', function (e) {
+  var label = document.getElementByTagName('label')
+  if (label.value === true) {
+    document.getElementById('good').add('green')
+  }
+})
+
+/*for (var i = 0; i < boutons.length; i++){
+    var bouton = boutons[i];
+    bouton.addEventListener('click', function(e){
+      if (input.value === true)
+      return document.getElementsByClassName('good').add('green').click();
+      else (input.value === false)
+      return document.getElementsByClassName('bad').add('red').click(e);
+    })
+}*/
