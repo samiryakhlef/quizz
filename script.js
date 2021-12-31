@@ -7,7 +7,7 @@ async function start() {
   // Mélange le tableau json
   shuffleArray(data);
 
-  // Affiche les question dans la div id "question1","question2","question3","question4"
+  // Affiche les question et les propositions 
   document.getElementById("question1").innerHTML = data[0].question;
   document.getElementById("label_response1").innerHTML =
     data[0].propositions[0];
@@ -17,6 +17,12 @@ async function start() {
     data[0].propositions[2];
   document.getElementById("label_response4").innerHTML =
     data[0].propositions[3];
+
+// exemple pour refactoriser
+  // for(var i = 1; i <= 4; i++) {
+  //   document.getElementById("label_response" + i).innerHTML = data[1].propositions[i];
+  // }
+
   document.getElementById("question2").innerHTML = data[1].question;
   document.getElementById("label_reponse1").innerHTML = data[1].propositions[0];
   document.getElementById("label_reponse2").innerHTML = data[1].propositions[1];
@@ -32,10 +38,16 @@ async function start() {
   document.getElementById("label_ponse1").innerHTML = data[3].propositions[0];
   document.getElementById("label_ponse3").innerHTML = data[3].propositions[2];
   document.getElementById("label_ponse4").innerHTML = data[3].propositions[3];
+
+  // exemple pour refactoriser
+  // for(var i = 1; i <= 4; i++) {
+  //   document.getElementById("label_response" + i).innerHTML = data[1].propositions[i];
+  // }
+
 }
 
-// Fonction de RÉCUPÉRATION DU FICHIER JSON contenant le quiz
-// également en “async” car elle utilise fetch() et “await”
+// Fonction RÉCUPÉRATION DU FICHIER JSON contenant le quiz
+// en “async” car elle utilise fetch() et “await”
 async function getJson() {
   // Récupère les données avec la fonction fetch()
   // Ici le fichier s'appelle quiz.json et il est situé à la racine "/" du dossier projet
@@ -44,21 +56,38 @@ async function getJson() {
   return data.json(); // Retourne les données au format Json
 }
 
-// Fonction de MÉLANGE ALÉATOIRE du tableau
+// Fonction MÉLANGE ALÉATOIRE du tableau
 function shuffleArray(array) {
   return array.sort(() => 0.5 - Math.random());
 }
 
+// si bonne reponse affiche couleur vert sur id ="good" sinon afficher rouge sur id="bad"
+
+
+
 // évènement au click du bouton valider
 
-document.querySelector('form').addEventListener('submit', function (e) {
-  var label = document.getElementByTagName('label')
-  if (label.value === true) {
-    document.getElementById('good').add('green')
-  }
-})
 
-/*for (var i = 0; i < boutons.length; i++){
+  /*document.querySelector('form').addEventListener('submit', function (e) {
+  //e.preventDefault();
+  // je définie une variable score = 0
+
+  // je récupère toutes les réponses du formulaire (input selectionnés par l'utilisateur)
+
+  // pour chaque input, je récupère la valeur de l'input (input.value)
+
+  // pour chaque input, je récupềre l'id de la question (input.name)
+
+  // pour chaque input, je récupère la bonne réponse dans le json (le name de l'input = id de la question dans le json)
+
+  // si la valeur de l'input est égale à la bonne réponse, je rajoute la classe "good" à l'input
+  // et j'incrémente le score
+
+  // si la valeur de l'input est différente de la bonne réponse, je rajoute la classe "bad" à l'input
+
+  // j'affiche le score dans la div id "score"
+
+for (var i = 0; i < boutons.length; i++){
     var bouton = boutons[i];
     bouton.addEventListener('click', function(e){
       if (input.value === true)
@@ -67,3 +96,6 @@ document.querySelector('form').addEventListener('submit', function (e) {
       return document.getElementsByClassName('bad').add('red').click(e);
     })
 }*/
+
+
+// changer les couleur des div #bad et #good à la validation du form
