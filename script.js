@@ -51,7 +51,7 @@ function shuffleArray(array) {
 
 // évènement au click du bouton valider
 
-document.querySelector('#form').addEventListener('submit', function (e) {
+document.querySelector('form').addEventListener('submit', function (e) {
   var label = document.getElementByTagName('label')
   if (label.value === true) {
     document.getElementById('good').add('green')
