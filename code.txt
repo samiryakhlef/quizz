@@ -81,3 +81,8 @@ for (var i = 0; i < boutton.length; i++) {
             else (input.value === false)
             return document.getElementsByClassName('bad').add('red').click(e)
         } 
+
+
+
+        reponse.classList.add("green"); // Ajoute la classe green
+reponse.classList.remove("green"); // Enlève la classe green
