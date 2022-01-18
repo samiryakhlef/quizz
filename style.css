@@ -47,13 +47,18 @@ h1 {
 /********************************checkbox à cocher********************************/
 .input {
   display: flex;
+  flex-direction: column;
   justify-content: space-around;
-  padding-left: 100px;
 }
 input,
 [type="checkbox"]:not(:checked) {
   width: 1.4em;
   height: 1.4em;
+}
+.reponse {
+  display: flex;
+  justify-content: space-around;
+
 }
 /****************bouton valider***********/
 .button {
