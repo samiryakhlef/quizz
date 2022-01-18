@@ -25,26 +25,25 @@ async function start() {
 
   //CETTE METHODE FONCTION SANS LE SOUCIS "UNDEFINED"
 
-  document.getElementById("question1").innerHTML = data[0].question;
-  document.getElementById("label_response1").innerHTML =
-    data[0].propositions[0];
-  document.getElementById("label_response2").innerHTML =
-    data[0].propositions[1];
-  document.getElementById("label_response3").innerHTML =
-    data[0].propositions[2];
-  document.getElementById("label_response4").innerHTML =
-    data[0].propositions[3];
-  document.getElementById("question2").innerHTML = data[1].question;
+  document.querySelector("#question1 h2").innerHTML = data[0].question;
+  document.getElementById("label_response1").innerHTML =data[0].propositions[0];
+  document.getElementById("label_response2").innerHTML =data[0].propositions[1];
+  document.getElementById("label_response3").innerHTML =data[0].propositions[2];
+  document.getElementById("label_response4").innerHTML =data[0].propositions[3];
+
+  document.querySelector("#question2 h2").innerHTML = data[1].question;
   document.getElementById("label_reponse1").innerHTML = data[1].propositions[0];
   document.getElementById("label_reponse2").innerHTML = data[1].propositions[1];
   document.getElementById("label_reponse3").innerHTML = data[1].propositions[2];
   document.getElementById("label_reponse4").innerHTML = data[1].propositions[3];
-  document.getElementById("question3").innerHTML = data[2].question;
+
+  document.querySelector("#question3 h2").innerHTML = data[2].question;
   document.getElementById("label_rponse1").innerHTML = data[2].propositions[0];
   document.getElementById("label_rponse2").innerHTML = data[2].propositions[1];
   document.getElementById("label_rponse3").innerHTML = data[2].propositions[2];
   document.getElementById("label_rponse4").innerHTML = data[2].propositions[3];
-  document.getElementById("question4").innerHTML = data[3].question;
+
+  document.querySelector("#question4 h2").innerHTML = data[3].question;
   document.getElementById("label_ponse2").innerHTML = data[3].propositions[1];
   document.getElementById("label_ponse1").innerHTML = data[3].propositions[0];
   document.getElementById("label_ponse3").innerHTML = data[3].propositions[2];
@@ -62,8 +61,9 @@ async function start() {
     for (let qIndex = 0; qIndex < data.length; qIndex++) {
       // Récupére les propositions json
       var propositions = data[qIndex].propositions;
+
       // SelectorAll des 4 <input> de la question ('#question0 input')
-      var input = document.querySelectorAll("#question" + qIndex + " input");
+      var input = document.querySelectorAll("#question" + (qIndex + 1) + " input");
 
       for (let propIndex = 0; propIndex < propositions.length; propIndex++) {
         // Définit la value de l'<input>
@@ -72,18 +72,18 @@ async function start() {
       // je récupère toutes les réponses de cette question
       // (input selectionné par l'utilisateur)
       inputChecked = document.querySelector(
-        "input[name = question" + qIndex + "]:checked"
+        "input[name=question" + (qIndex + 1) + "]:checked"
       );
-
+      
       // Si la réponse n'est pas vide
       if (inputChecked) {
-        var anwser = inputChecked.value; // Réponse choisie
+        var answer = inputChecked.value; // Réponse choisie
 
         // pour chaque input, je récupère la bonne réponse dans le json (le name de l'input = id de la question dans le json)
         var goodAnswer = data[qIndex].reponse; // Bonne réponse
 
         // Si la réponse est bonne
-        if (anwser == goodAnswer) {
+        if (answer == goodAnswer) {
           score++; // +1 point
         }
       }
