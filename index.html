@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="script.js" defer></script>
+
     <script src="quiz.json" defer></script>
     <title>QUIZZ</title>
 </head>
@@ -20,9 +21,13 @@
             <h1>Quizz Game</h1>
         </a>
         <div id="bad" class="bad"> </div>
+
     </header>
-    <main>
+
+    <body>
+
         <form action="#" id="form" method="get">
+
             <div id="question1" class="content">
                 <h2></h2>
                 <div class="input">
@@ -50,24 +55,24 @@
             <div id="question2" class="content">
                 <h2></h2>
                 <div class="input">
-                <div class="reponse">
                     <div class="reponse">
-                        <input type="radio" name="question2" id="reponse1" class="sugestion_input1" value="">
-                        <label for="reponse1" id="label_reponse1"></label>
+                        <div class="reponse">
+                            <input type="radio" name="question2" id="reponse1" class="sugestion_input1" value="">
+                            <label for="reponse1" id="label_reponse1"></label>
+                        </div>
+                        <div class="reponse">
+                            <input type="radio" name="question2" id="reponse2" class="sugestion_input2" value="">
+                            <label for="reponse2" id="label_reponse2"></label>
+                        </div>
+                        <div class="reponse">
+                            <input type="radio" name="question2" id="reponse3" class="sugestion_input3" value="">
+                            <label for="reponse3" id="label_reponse3"></label>
+                        </div>
+                        <div class="reponse">
+                            <input type="radio" name="question2" id="reponse4" class="sugestion_input4" value="">
+                            <label for="reponse4" id="label_reponse4"></label>
+                        </div>
                     </div>
-                    <div class="reponse">
-                        <input type="radio" name="question2" id="reponse2" class="sugestion_input2" value="">
-                        <label for="reponse2" id="label_reponse2"></label>
-                    </div>
-                    <div class="reponse">
-                        <input type="radio" name="question2" id="reponse3" class="sugestion_input3" value="">
-                        <label for="reponse3" id="label_reponse3"></label>
-                    </div>
-                    <div class="reponse">
-                        <input type="radio" name="question2" id="reponse4" class="sugestion_input4" value="">
-                        <label for="reponse4" id="label_reponse4"></label>
-                    </div>
-                </div>
                 </div>
                 <h3></h3>
             </div>
@@ -117,13 +122,14 @@
                 <h3></h3>
             </div>
             <div class="button">
-                <input type="submit" value="valider" class="btn">
+                <input type="submit" value="valider" class="btn" onclick="">
             </div>
         </form>
         <h4>score</h4>
         <div class="score" id="score">
         </div>
-    </main>
+        
+    </body>
     <footer>
 
     </footer>

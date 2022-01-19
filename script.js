@@ -1,3 +1,8 @@
+// prompt le nom du candidat
+//var nom = prompt('entrer votre nom');
+
+
+
 start();
 
 // Il faut la définir en “async” (asynchrone)
@@ -57,12 +62,13 @@ async function start() {
         // je définie une variable score = 0
         var score = 0;
 
-        // Compte le score en parcourant les 4 questions
+
+        // Compte le score en parcourant les questions
         for (let qIndex = 0; qIndex < data.length; qIndex++) {
-            // Récupére les propositions json
+            // Récupére les propositions 
             var propositions = data[qIndex].propositions;
 
-            // SelectorAll des 4 <input> de la question ('#question0 input')
+            // SelectorAll des <input> de la question ('#question0 input')
             var input = document.querySelectorAll("#question" + (qIndex + 1) + " input");
 
             for (let propIndex = 0; propIndex < propositions.length; propIndex++) {
@@ -81,32 +87,64 @@ async function start() {
 
                 // pour chaque input, je récupère la bonne réponse dans le json (le name de l'input = id de la question dans le json)
                 var goodAnswer = data[qIndex].reponse; // Bonne réponse
-                var anecdotal = data[qIndex].anecdote;
+                var h3 = document.querySelectorAll("#question" + (qIndex + 1) + "h3");
+                
+                // ajoute la couleur verte pour les bonnes réponses
+                var good = document.getElementById("good").style.backgroundColor = "green";
+                // ajoute la couleur rouge des mauvaise réponses
+                var bad = document.getElementById("bad").style.backgroundColor = "red";
                 // Si la réponse est bonne
                 if (answer == goodAnswer) {
+                    // j'affiche le score dans la div id "score"
                     score++; // +1 point
+                    h3.innerHTML = anecdotal; 
+
+                }
+                // si la réponse est mauvaise
+                else {
+
+
+
+                }
+                if (answer == goodAnswer) {
                     document.querySelector("#question1 h3").innerHTML = anecdotal;
+                }else{
+                    bad
+                }
+                if (answer == goodAnswer) {
                     document.querySelector("#question2 h3").innerHTML = anecdotal;
+                }else{
+                    bad
+                }
+                if (answer == goodAnswer) {
                     document.querySelector("#question3 h3").innerHTML = anecdotal;
-                    document.querySelector("#question4 h3").innerHTML = anecdotal;
+                }else{
+                    bad
+                }
+                if (answer == goodAnswer) {
+                    document.querySelector("#question3 h3").innerHTML = anecdotal;
+                }else{
+                    bad
                 }
 
 
             }
         }
         document.getElementById("score").innerHTML = score;
+        //localStorage
+        localStorage.setItem(nom, score);
+
 
     }
 
-    // et j'incrémente le score
 
-    //if ()
-    // si la valeur de l'input est différente de la bonne réponse, je rajoute la classe "bad" à l'input
-    // j'affiche le score dans la div id "score"
-    // VALIDATION DU QUIZ*/
+
+
+
 }
 
 // Fonction MÉLANGE ALÉATOIRE du tableau
 function shuffleArray(array) {
-    return array.sort(() => 0.5 - Math.random());
+    return array.sort(() => 0.4 - Math.random());
 }
+
