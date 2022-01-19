@@ -97,8 +97,7 @@ async function start() {
                 if (answer == goodAnswer) {
                     // j'affiche le score dans la div id "score"
                     score++; // +1 point
-                    h3.innerHTML = anecdotal; 
-
+                    
                 }
                 // si la réponse est mauvaise
                 else {
@@ -106,26 +105,7 @@ async function start() {
 
 
                 }
-                if (answer == goodAnswer) {
-                    document.querySelector("#question1 h3").innerHTML = anecdotal;
-                }else{
-                    bad
-                }
-                if (answer == goodAnswer) {
-                    document.querySelector("#question2 h3").innerHTML = anecdotal;
-                }else{
-                    bad
-                }
-                if (answer == goodAnswer) {
-                    document.querySelector("#question3 h3").innerHTML = anecdotal;
-                }else{
-                    bad
-                }
-                if (answer == goodAnswer) {
-                    document.querySelector("#question3 h3").innerHTML = anecdotal;
-                }else{
-                    bad
-                }
+            
 
 
             }
